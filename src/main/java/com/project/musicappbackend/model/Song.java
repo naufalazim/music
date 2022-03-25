@@ -19,4 +19,5 @@ public class Song {
     private String artist;
     private boolean isFavorited;
 
+
 }

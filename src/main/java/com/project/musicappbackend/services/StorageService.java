@@ -47,8 +47,6 @@ public class StorageService {
                 .map(s3ObjectSummary -> {
                     return s3ObjectSummary.getKey();
                 }).collect(Collectors.toList());
-
-
                 //void:
 //                .forEach(s3ObjectSummary -> {
 //                    System.out.println(s3ObjectSummary.toString());
@@ -64,7 +62,6 @@ public class StorageService {
             space.putObject(new PutObjectRequest("music-player", file.getOriginalFilename(), file.getInputStream(), objectMetadata).withCannedAcl(CannedAccessControlList.PublicRead));
 
             //.withCannedAcl(CannedAccessControlList.PublicRead) -> public as default
-
     }
 
 }

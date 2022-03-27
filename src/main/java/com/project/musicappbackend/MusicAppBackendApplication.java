@@ -8,7 +8,6 @@ import org.springframework.context.ApplicationContext;
 @SpringBootApplication
 public class MusicAppBackendApplication {
 
-
 	public static void main(String[] args) {
 
 		//Application Context (Interface)

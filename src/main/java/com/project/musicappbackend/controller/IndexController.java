@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.io.IOException;
 
@@ -28,11 +29,17 @@ public class IndexController {
     }
 
     //Upload file to application:
-    @PostMapping
-    public String handleFileUpload(@RequestParam("file")MultipartFile file) throws IOException {
+    @PostMapping("/")
+    public String handleFileUpload(@RequestParam("file")MultipartFile file, RedirectAttributes redirectAttributes) throws IOException {
+
 
         storageService.uploadSong(file);
+        redirectAttributes.addFlashAttribute("message",
+                "You successfully uploaded " + file.getOriginalFilename() + "!");
         return "redirect:/";
+
+//        storageService.uploadSong(file);
+//        return "redirect:/";
     }
 
 

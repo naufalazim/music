@@ -1,4 +1,5 @@
 # 🎶 Music App
 
-- Backend: Spring-boot
-- Frontend: React
+### `Tech Stacks`
+- Frontend: bootstrap
+- Backend: Springboot
